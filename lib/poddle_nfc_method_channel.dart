@@ -11,7 +11,8 @@ class MethodChannelPoddleNfc extends PoddleNfcPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+    final version = await methodChannel.invokeMethod<bool>('getPlatformVersion');
+    print(version.toString());
+    return version.toString();
   }
 }
